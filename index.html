@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>MediCare Hub - Your Complete Healthcare Solution</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="imges/medicure.png" alt="MediCare Hub Logo">
+                <h1>MediCare <span>Hub</span></h1>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="hospitals.html">Hospitals</a></li>
+                    <li><a href="pharmacy.html">Pharmacy</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="slide-in-left">Your Health Is Our Priority</h2>
+                <p class="slide-in-right">Comprehensive healthcare solutions at your fingertips</p>
+                <div class="hero-buttons fade-in">
+                    <a href="#doctor-availability" class="btn btn-primary">Find a Doctor</a>
+                    <a href="#emergency" class="btn btn-secondary">Emergency Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Access Section -->
+    <section class="quick-access">
+        <div class="container">
+            <div class="section-title">
+                <h3>Quick Access</h3>
+                <p>Get what you need quickly</p>
+            </div>
+            <div class="quick-access-grid">
+                <div class="access-card pulse">
+                    <i class="fas fa-user-md"></i>
+                    <h4>Doctor Availability</h4>
+                    <p>Check doctor schedules and book appointments</p>
+                    <a href="#doctor-availability">View Details</a>
+                </div>
+                <div class="access-card pulse">
+                    <i class="fas fa-ambulance"></i>
+                    <h4>Emergency</h4>
+                    <p>Find nearest hospitals in emergency situations</p>
+                    <a href="#emergency">View Details</a>
+                </div>
+                <div class="access-card pulse">
+                    <i class="fas fa-procedures"></i>
+                    <h4>Patient Waiting List</h4>
+                    <p>Track your position in the waiting queue</p>
+                    <a href="#waiting-list">View Details</a>
+                </div>
+                <div class="access-card pulse">
+                    <i class="fas fa-pills"></i>
+                    <h4>Pharmacy Finder</h4>
+                    <p>Locate nearby pharmacies and check medicine availability</p>
+                    <a href="pharmacy.html">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctor Availability Section -->
+    <section id="doctor-availability" class="doctor-availability">
+        <div class="container">
+            <div class="section-title">
+                <h3>Doctor Availability</h3>
+                <p>Find and book appointments with specialists</p>
+            </div>
+            <div class="doctor-search">
+                <form id="doctor-search-form">
+                    <div class="form-group">
+                        <label for="specialty">Specialty</label>
+                        <select id="specialty" name="specialty">
+                            <option value="">Select Specialty</option>
+                            <option value="cardiology">Cardiology</option>
+                            <option value="neurology">Neurology</option>
+                            <option value="pediatrics">Pediatrics</option>
+                            <option value="orthopedics">Orthopedics</option>
+                            <option value="dermatology">Dermatology</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="hospital">Hospital</label>
+                        <select id="hospital" name="hospital">
+                            <option value="">Select Hospital</option>
+                            <option value="general">City General Hospital</option>
+                            <option value="memorial">Memorial Medical Center</option>
+                            <option value="children">Children's Hospital</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" name="date">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Search Doctors</button>
+                </form>
+            </div>
+            <div id="doctor-results" class="doctor-results">
+                <!-- Results will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Section -->
+    <section id="emergency" class="emergency">
+        <div class="container">
+            <div class="section-title">
+                <h3>Emergency Services</h3>
+                <p>Find the nearest hospital in case of emergency</p>
+            </div>
+            <div class="emergency-content">
+                <div class="emergency-map">
+                    <div id="map-container">
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215373510557!2d-73.98784492416492!3d40.74844097138948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQ0JzU0LjQiTiA3M8KwNTknMTkuMyJX!5e0!3m2!1sen!2sus!4v1623256789012!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                        <div class="location-picker"></div>
+                    </div>
+                    <button id="locate-me" class="btn btn-primary">
+                        <i class="fas fa-location-arrow"></i> Use My Location
+                    </button>
+                </div>
+                <div class="emergency-list">
+                    <h4>Nearest Hospitals</h4>
+                    <div id="hospital-list">
+                        <!-- Hospitals will be populated by JavaScript -->
+                    </div>
+                    <div class="emergency-contacts">
+                        <h4>Emergency Contacts</h4>
+                        <ul>
+                            <li><i class="fas fa-phone-alt"></i> Ambulance: 911</li>
+                            <li><i class="fas fa-phone-alt"></i> Poison Control: 1-800-222-1222</li>
+                            <li><i class="fas fa-phone-alt"></i> Police: 911</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patient Waiting List Section -->
+    <section id="waiting-list" class="waiting-list">
+        <div class="container">
+            <div class="section-title">
+                <h3>Patient Waiting List</h3>
+                <p>Track your position in the queue</p>
+            </div>
+            <div class="waiting-list-content">
+                <div class="waiting-list-form">
+                    <form id="waiting-list-check">
+                        <div class="form-group">
+                            <label for="appointment-id">Appointment ID</label>
+                            <input type="text" id="appointment-id" placeholder="Enter your appointment ID">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Check Status</button>
+                    </form>
+                </div>
+                <div class="waiting-list-display">
+                    <div id="waiting-list-result">
+                        <div class="initial-message">
+                            <i class="fas fa-info-circle"></i>
+                            <p>Enter your appointment ID to check your waiting status</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Features Section -->
+    <section class="additional-features">
+        <div class="container">
+            <div class="section-title">
+                <h3>Additional Features</h3>
+                <p>More tools to manage your healthcare</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-calendar-check"></i>
+                    <h4>Appointment Reminders</h4>
+                    <p>Get SMS/Email reminders for your upcoming appointments</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-file-medical"></i>
+                    <h4>Medical Records</h4>
+                    <p>Access your medical history and test results online</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-prescription-bottle-alt"></i>
+                    <h4>Prescription Refills</h4>
+                    <p>Request prescription refills without visiting the doctor</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-video"></i>
+                    <h4>Telemedicine</h4>
+                    <p>Consult with doctors remotely via video call</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h3>Subscribe to Our Newsletter</h3>
+                <p>Get health tips, news and updates directly to your inbox</p>
+                <form id="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="logo">
+                        <img src="imges/medicure.png" alt="MediCare Hub Logo">
+                        <h1>MediCare <span>Hub</span></h1>
+                    </div>
+                    <p>Comprehensive healthcare solutions for everyone. Your health is our priority.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="hospitals.html">Find Hospitals</a></li>
+                        <li><a href="pharmacy.html">Pharmacy</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#">Doctor Appointments</a></li>
+                        <li><a href="#">Emergency Services</a></li>
+                        <li><a href="#">Pharmacy Locator</a></li>
+                        <li><a href="#">Medical Records</a></li>
+                        <li><a href="#">Telemedicine</a></li>
+                        <li><a href="#">Health Checkups</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Health Street, Medical City, MC 12345</li>
+                        <li><i class="fas fa-phone-alt"></i> +1 (123) 456-7890</li>
+                        <li><i class="fas fa-envelope"></i> info@medicarehub.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 8:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 MediCare Hub. All Rights Reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/doctor-availability.js"></script>
+    <script src="js/emergency.js"></script>
+    <script src="js/waiting-list.js"></script>
+</body>
+</html>

@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Hospitals - MediCare Hub</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="imges/medicure.png" alt="MediCare Hub Logo">
+                <h1>MediCare <span>Hub</span></h1>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="hospitals.html" class="active">Hospitals</a></li>
+                    <li><a href="pharmacy.html">Pharmacy</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hospitals Hero Section -->
+    <section class="page-hero hospitals-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="slide-in-left">Find Hospitals</h2>
+                <p class="slide-in-right">Locate the best healthcare facilities near you</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hospital Search Section -->
+    <section class="hospital-search">
+        <div class="container">
+            <div class="section-title">
+                <h3>Find Hospitals & Clinics</h3>
+                <p>Search for healthcare facilities based on your needs</p>
+            </div>
+            <div class="search-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="hospital-locator">Hospital Locator</button>
+                    <button class="tab-btn" data-tab="specialty-search">Specialty Search</button>
+                    <button class="tab-btn" data-tab="emergency-services">Emergency Services</button>
+                </div>
+                <div class="tab-content active" id="hospital-locator">
+                    <form id="hospitalLocatorForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="hospital-location">Location</label>
+                                <input type="text" id="hospital-location" placeholder="Enter address or zip code">
+                            </div>
+                            <div class="form-group">
+                                <label for="hospital-distance">Distance</label>
+                                <select id="hospital-distance">
+                                    <option value="5">5 miles</option>
+                                    <option value="10" selected>10 miles</option>
+                                    <option value="25">25 miles</option>
+                                    <option value="50">50 miles</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="hospital-type">Facility Type</label>
+                                <select id="hospital-type">
+                                    <option value="all">All Facilities</option>
+                                    <option value="hospital">Hospitals</option>
+                                    <option value="clinic">Clinics</option>
+                                    <option value="urgent-care">Urgent Care</option>
+                                    <option value="specialty">Specialty Centers</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Search Hospitals</button>
+                    </form>
+                </div>
+                <div class="tab-content" id="specialty-search">
+                    <form id="specialtySearchForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="specialty-type">Specialty</label>
+                                <select id="specialty-type">
+                                    <option value="">Select Specialty</option>
+                                    <option value="cardiology">Cardiology</option>
+                                    <option value="oncology">Oncology</option>
+                                    <option value="pediatrics">Pediatrics</option>
+                                    <option value="orthopedics">Orthopedics</option>
+                                    <option value="neurology">Neurology</option>
+                                    <option value="maternity">Maternity</option>
+                                    <option value="rehabilitation">Rehabilitation</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="specialty-location">Location</label>
+                                <input type="text" id="specialty-location" placeholder="Enter address or zip code">
+                            </div>
+                            <div class="form-group">
+                                <label for="specialty-distance">Search Radius</label>
+                                <select id="specialty-distance">
+                                    <option value="10">10 miles</option>
+                                    <option value="25" selected>25 miles</option>
+                                    <option value="50">50 miles</option>
+                                    <option value="100">100 miles</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Search Specialty Centers</button>
+                    </form>
+                </div>
+                <div class="tab-content" id="emergency-services">
+                    <form id="emergencySearchForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="emergency-location">Location</label>
+                                <input type="text" id="emergency-location" placeholder="Enter address or zip code">
+                            </div>
+                            <div class="form-group">
+                                <label for="emergency-type">Emergency Type</label>
+                                <select id="emergency-type">
+                                    <option value="general">General Emergency</option>
+                                    <option value="trauma">Trauma Center</option>
+                                    <option value="pediatric">Pediatric Emergency</option>
+                                    <option value="cardiac">Cardiac Emergency</option>
+                                    <option value="stroke">Stroke Center</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="emergency-distance">Search Radius</label>
+                                <select id="emergency-distance">
+                                    <option value="5">5 miles</option>
+                                    <option value="10" selected>10 miles</option>
+                                    <option value="25">25 miles</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Find Emergency Care</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hospital Results Section -->
+    <section class="hospital-results">
+        <div class="container">
+            <div class="results-container">
+                <div class="results-map">
+                    <div id="hospital-map-container">
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215373510557!2d-73.98784492416492!3d40.74844097138948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQ0JzU0LjQiTiA3M8KwNTknMTkuMyJX!5e0!3m2!1sen!2sus!4v1623256789012!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                        <div class="location-picker"></div>
+                    </div>
+                    <button id="hospital-locate-me" class="btn btn-outline">
+                        <i class="fas fa-location-arrow"></i> Use My Location
+                    </button>
+                </div>
+                <div class="results-list">
+                    <div class="results-header">
+                        <h4>Nearby Hospitals</h4>
+                        <div class="sort-options">
+                            <span>Sort by:</span>
+                            <select id="hospital-sort">
+                                <option value="distance">Distance</option>
+                                <option value="rating">Rating</option>
+                                <option value="wait-time">Wait Time</option>
+                                <option value="name">Name</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="hospital-list">
+                        <!-- Hospitals will be populated by JavaScript -->
+                        <div class="hospital-card">
+                            <div class="hospital-info">
+                                <h5>City General Hospital</h5>
+                                <div class="hospital-meta">
+                                    <span class="distance">0.5 miles</span>
+                                    <span class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        5.0 (342)
+                                    </span>
+                                    <span class="wait-time">
+                                        <i class="fas fa-clock"></i> ER Wait: 25 min
+                                    </span>
+                                </div>
+                                <div class="hospital-address">
+                                    <i class="fas fa-map-marker-alt"></i> 123 Medical Center Drive, Medical City, MC 12345
+                                </div>
+                                <div class="hospital-services">
+                                    <span class="badge">Trauma Center</span>
+                                    <span class="badge">Pediatric ER</span>
+                                    <span class="badge">Stroke Center</span>
+                                </div>
+                                <div class="hospital-phone">
+                                    <i class="fas fa-phone-alt"></i> (123) 456-7890
+                                </div>
+                            </div>
+                            <div class="hospital-actions">
+                                <a href="#" class="btn btn-outline">View Details</a>
+                                <a href="#" class="btn btn-primary">Get Directions</a>
+                            </div>
+                        </div>
+                        <div class="hospital-card">
+                            <div class="hospital-info">
+                                <h5>Children's Medical Center</h5>
+                                <div class="hospital-meta">
+                                    <span class="distance">1.2 miles</span>
+                                    <span class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        4.7 (215)
+                                    </span>
+                                    <span class="wait-time">
+                                        <i class="fas fa-clock"></i> ER Wait: 40 min
+                                    </span>
+                                </div>
+                                <div class="hospital-address">
+                                    <i class="fas fa-map-marker-alt"></i> 456 Pediatric Way, Medical City, MC 12345
+                                </div>
+                                <div class="hospital-services">
+                                    <span class="badge">Pediatric ER</span>
+                                    <span class="badge">NICU</span>
+                                    <span class="badge">Child Life</span>
+                                </div>
+                                <div class="hospital-phone">
+                                    <i class="fas fa-phone-alt"></i> (123) 456-7891
+                                </div>
+                            </div>
+                            <div class="hospital-actions">
+                                <a href="#" class="btn btn-outline">View Details</a>
+                                <a href="#" class="btn btn-primary">Get Directions</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hospital Details Section -->
+    <section class="hospital-details">
+        <div class="container">
+            <div class="details-container">
+                <div class="hospital-main">
+                    <div class="hospital-header">
+                        <h3>City General Hospital</h3>
+                        <div class="hospital-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>5.0 (342 reviews)</span>
+                            </div>
+                            <a href="#reviews" class="review-link">Read Reviews</a>
+                        </div>
+                        <div class="hospital-address">
+                            <i class="fas fa-map-marker-alt"></i> 123 Medical Center Drive, Medical City, MC 12345
+                        </div>
+                        <div class="hospital-phone">
+                            <i class="fas fa-phone-alt"></i> (123) 456-7890
+                        </div>
+                    </div>
+                    <div class="hospital-gallery">
+                        <div class="main-image">
+                            <img src="imges/gen.jpg" alt="City General Hospital">
+                        </div>
+                        <div class="thumbnail-images">
+                            <img src="imges/entrance.png" alt="Hospital Entrance">
+                            <img src="imges/emg.png" alt="Emergency Room">
+                            <img src="imges/pat.png" alt="Patient Room">
+                        </div>
+                    </div>
+                    <div class="hospital-description">
+                        <h4>About City General Hospital</h4>
+                        <p>City General Hospital is a 450-bed acute care facility serving the Medical City area since 1952. We are a Level I Trauma Center and regional referral center for complex cases. Our hospital features state-of-the-art technology and a team of highly skilled physicians and nurses dedicated to providing exceptional patient care.</p>
+                        <p>We offer comprehensive services including emergency care, cardiac surgery, cancer treatment, women's services, pediatrics, orthopedics, and rehabilitation. Our hospital is consistently ranked among the top hospitals in the state for patient outcomes and satisfaction.</p>
+                    </div>
+                </div>
+                <div class="hospital-sidebar">
+                    <div class="sidebar-card">
+                        <h4>Quick Facts</h4>
+                        <ul class="facts-list">
+                            <li>
+                                <span class="fact-label">Beds:</span>
+                                <span class="fact-value">450</span>
+                            </li>
+                            <li>
+                                <span class="fact-label">ER Wait Time:</span>
+                                <span class="fact-value">25 minutes</span>
+                            </li>
+                            <li>
+                                <span class="fact-label">Trauma Level:</span>
+                                <span class="fact-value">Level I</span>
+                            </li>
+                            <li>
+                                <span class="fact-label">Teaching Hospital:</span>
+                                <span class="fact-value">Yes</span>
+                            </li>
+                            <li>
+                                <span class="fact-label">Parking:</span>
+                                <span class="fact-value">Free valet</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Emergency Services</h4>
+                        <ul class="services-list">
+                            <li><i class="fas fa-check-circle"></i> 24/7 Emergency Department</li>
+                            <li><i class="fas fa-check-circle"></i> Level I Trauma Center</li>
+                            <li><i class="fas fa-check-circle"></i> Stroke Center</li>
+                            <li><i class="fas fa-check-circle"></i> Cardiac Emergency</li>
+                            <li><i class="fas fa-check-circle"></i> Pediatric Emergency</li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Visiting Hours</h4>
+                        <ul class="hours-list">
+                            <li>
+                                <span class="hours-label">General:</span>
+                                <span class="hours-value">8:00 AM - 8:00 PM</span>
+                            </li>
+                            <li>
+                                <span class="hours-label">ICU:</span>
+                                <span class="hours-value">9:00 AM - 6:00 PM</span>
+                            </li>
+                            <li>
+                                <span class="hours-label">Maternity:</span>
+                                <span class="hours-value">24 hours</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Get Directions</h4>
+                        <div class="mini-map">
+                            <img src="imges/map1.png" alt="Hospital Location">
+                        </div>
+                        <a href="#" class="btn btn-primary btn-block">
+                            <i class="fas fa-directions"></i> Directions
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors Section -->
+    <section class="hospital-doctors">
+        <div class="container">
+            <div class="section-title">
+                <h3>Doctors at This Hospital</h3>
+                <p>Browse specialists available at this facility</p>
+            </div>
+            <div class="doctors-filter">
+                <div class="filter-group">
+                    <label for="doctor-specialty">Specialty:</label>
+                    <select id="doctor-specialty">
+                        <option value="all">All Specialties</option>
+                        <option value="cardiology">Cardiology</option>
+                        <option value="emergency">Emergency Medicine</option>
+                        <option value="pediatrics">Pediatrics</option>
+                        <option value="surgery">Surgery</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="doctor-availability">Availability:</label>
+                    <select id="doctor-availability">
+                        <option value="all">Any Time</option>
+                        <option value="today">Today</option>
+                        <option value="week">This Week</option>
+                        <option value="weekend">Weekend</option>
+                    </select>
+                </div>
+            </div>
+            <div class="doctors-grid">
+                <div class="doctor-card">
+                    <div class="doctor-image">
+                        <img src="imges/DOC1 (1).jpg" alt="Dr. Sarah Johnson">
+                    </div>
+                    <div class="doctor-info">
+                        <h4>Dr. Sarah Johnson</h4>
+                        <p class="specialty">Cardiology</p>
+                        <div class="doctor-meta">
+                            <span class="experience">
+                                <i class="fas fa-briefcase"></i> 15 years
+                            </span>
+                            <span class="rating">
+                                <i class="fas fa-star"></i> 4.9 (127)
+                            </span>
+                        </div>
+                        <div class="doctor-availability">
+                            <span class="badge available">Available Today</span>
+                        </div>
+                        <a href="#" class="btn btn-outline">View Profile</a>
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                    </div>
+                </div>
+                <div class="doctor-card">
+                    <div class="doctor-image">
+                        <img src="imges/DOC1 (2).jpg" alt="Dr. Michael Chen">
+                    </div>
+                    <div class="doctor-info">
+                        <h4>Dr. Michael Chen</h4>
+                        <p class="specialty">Emergency Medicine</p>
+                        <div class="doctor-meta">
+                            <span class="experience">
+                                <i class="fas fa-briefcase"></i> 10 years
+                            </span>
+                            <span class="rating">
+                                <i class="fas fa-star"></i> 4.8 (94)
+                            </span>
+                        </div>
+                        <div class="doctor-availability">
+                            <span class="badge available">Available Today</span>
+                        </div>
+                        <a href="#" class="btn btn-outline">View Profile</a>
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                    </div>
+                </div>
+                <div class="doctor-card">
+                    <div class="doctor-image">
+                        <img src="imges/DOC1 (3).jpg" alt="Dr. Lisa Rodriguez">
+                    </div>
+                    <div class="doctor-info">
+                        <h4>Dr. Lisa Rodriguez</h4>
+                        <p class="specialty">Pediatrics</p>
+                        <div class="doctor-meta">
+                            <span class="experience">
+                                <i class="fas fa-briefcase"></i> 12 years
+                            </span>
+                            <span class="rating">
+                                <i class="fas fa-star"></i> 4.9 (156)
+                            </span>
+                        </div>
+                        <div class="doctor-availability">
+                            <span class="badge limited">Limited Availability</span>
+                        </div>
+                        <a href="#" class="btn btn-outline">View Profile</a>
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                    </div>
+                </div>
+            </div>
+            <div class="view-all">
+                <a href="#" class="btn btn-outline">View All Doctors</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="hospital-reviews">
+        <div class="container">
+            <div class="section-title">
+                <h3>Patient Reviews</h3>
+                <p>What people say about their experience</p>
+            </div>
+            <div class="reviews-container">
+                <div class="reviews-summary">
+                    <div class="overall-rating">
+                        <div class="rating-number">5.0</div>
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="rating-count">342 reviews</div>
+                    </div>
+                    <div class="rating-bars">
+                        <div class="rating-bar">
+                            <span class="star-count">5 stars</span>
+                            <div class="bar-container">
+                                <div class="bar" style="width: 85%;"></div>
+                            </div>
+                            <span class="percentage">85%</span>
+                        </div>
+                        <div class="rating-bar">
+                            <span class="star-count">4 stars</span>
+                            <div class="bar-container">
+                                <div class="bar" style="width: 10%;"></div>
+                            </div>
+                            <span class="percentage">10%</span>
+                        </div>
+                        <div class="rating-bar">
+                            <span class="star-count">3 stars</span>
+                            <div class="bar-container">
+                                <div class="bar" style="width: 3%;"></div>
+                            </div>
+                            <span class="percentage">3%</span>
+                        </div>
+                        <div class="rating-bar">
+                            <span class="star-count">2 stars</span>
+                            <div class="bar-container">
+                                <div class="bar" style="width: 1%;"></div>
+                            </div>
+                            <span class="percentage">1%</span>
+                        </div>
+                        <div class="rating-bar">
+                            <span class="star-count">1 star</span>
+                            <div class="bar-container">
+                                <div class="bar" style="width: 1%;"></div>
+                            </div>
+                            <span class="percentage">1%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="reviews-list">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer">
+                                <img src="imges/Patient1 (1).jpg" alt="Robert Johnson">
+                                <div class="reviewer-info">
+                                    <h5>Robert Johnson</h5>
+                                    <div class="review-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="review-date">2 weeks ago</div>
+                        </div>
+                        <div class="review-content">
+                            <h4>Exceptional Emergency Care</h4>
+                            <p>I was brought to City General after a car accident. The trauma team was waiting for me when I arrived and provided immediate, excellent care. The nurses were attentive and kind during my recovery. The facilities are modern and clean. I can't thank them enough for saving my life.</p>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer">
+                                <img src="imges/Patient1 (2).jpg" alt="Maria Garcia">
+                                <div class="reviewer-info">
+                                    <h5>Maria Garcia</h5>
+                                    <div class="review-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="review-date">1 month ago</div>
+                        </div>
+                        <div class="review-content">
+                            <h4>Wonderful Maternity Experience</h4>
+                            <p>Delivered my baby here and couldn't have asked for a better experience. The maternity ward is beautiful and comfortable. The nurses were incredibly supportive during labor and postpartum. The lactation consultant was especially helpful. Highly recommend for expecting mothers!</p>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer">
+                                <img src="imges/Patient 3.jpg" alt="James Wilson">
+                                <div class="reviewer-info">
+                                    <h5>James Wilson</h5>
+                                    <div class="review-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="review-date">2 months ago</div>
+                        </div>
+                        <div class="review-content">
+                            <h4>Great Cardiac Care</h4>
+                            <p>Had a heart attack and was rushed to City General. The cardiac team acted quickly and saved my life. The follow-up care has been excellent. My only complaint is that parking can be difficult during peak hours, but that's minor compared to the quality of care.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="review-actions">
+                <a href="#" class="btn btn-outline">Read All Reviews</a>
+                <a href="#" class="btn btn-primary">Write a Review</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="logo">
+                        <img src="imges/medicure.png" alt="MediCare Hub Logo">
+                        <h1>MediCare <span>Hub</span></h1>
+                    </div>
+                    <p>Comprehensive healthcare solutions for everyone. Your health is our priority.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="hospitals.html">Find Hospitals</a></li>
+                        <li><a href="pharmacy.html">Pharmacy</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#">Doctor Appointments</a></li>
+                        <li><a href="#">Emergency Services</a></li>
+                        <li><a href="#">Pharmacy Locator</a></li>
+                        <li><a href="#">Medical Records</a></li>
+                        <li><a href="#">Telemedicine</a></li>
+                        <li><a href="#">Health Checkups</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Health Street, Medical City, MC 12345</li>
+                        <li><i class="fas fa-phone-alt"></i> +1 (123) 456-7890</li>
+                        <li><i class="fas fa-envelope"></i> info@medicarehub.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 8:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 MediCare Hub. All Rights Reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/hospitals.js"></script>
+</body>
+</html>
